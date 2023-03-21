@@ -341,7 +341,8 @@ main { flex-direction: column; }
 /*** END ANIMATION ***/
 
 /*** CSS HACKS ***/
-html, body, main { min-width: 30em; }
+html, body, main { overflow-x: hidden; }
+.m-books-header-book-link { visibility: hidden; }
 /*** END CSS HACKS ***/
 
 	/*** JEKYLL ***/
