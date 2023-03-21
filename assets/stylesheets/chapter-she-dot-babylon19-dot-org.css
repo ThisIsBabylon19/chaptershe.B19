@@ -340,6 +340,10 @@ main { flex-direction: column; }
 }
 /*** END ANIMATION ***/
 
+/*** CSS HACKS ***/
+html, body, main { min-width: 30em; }
+/*** END CSS HACKS ***/
+
 	/*** JEKYLL ***/
 .m-books-header-book { display: none; }
 .m-books[activeBook="1"] .m-books-header-book.is-nthChild-1,
