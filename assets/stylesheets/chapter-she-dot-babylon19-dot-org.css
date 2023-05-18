@@ -37,8 +37,10 @@ Written for -- https://chaptershe.babylon19.org
 .u-marquee.is-subtitle { background-color: black; }
 * { color: black; }
 
-html,
-.m-books-footer:before { background-color: #eee; }
+html[appStyle="theClub"],
+html[appStyle="theKit"] .u-button_CTA,
+html[appStyle="theClub"] .m-books-footer:before,
+html[appStyle="theKit"] .footer { background-color: #eee; }
 .u-button_toggle,
 .u-marquee.is-subtitle .u-marquee-box { color: #eee; }
 .m-books-footer:after { background-image: linear-gradient(transparent, #eee, #eee, #eee); }
@@ -81,7 +83,7 @@ main { font-family: "Impact"; word-spacing: .15em; }
     background-position: center;
 }
 
-.u-fancyText {
+html[appStyle="theClub"] .u-fancyText {
     background-image: url("../../assets/images/purple-background.png");
     background-size: cover;
     background-position: fixed;
@@ -96,17 +98,23 @@ main { font-family: "Impact"; word-spacing: .15em; }
     color: transparent;
 }
 
+html[appStyle="theKit"] {// background: red !important; }
+html[appStyle="theKit"],
+html[appStyle="theClub"] .u-button_CTA,
+.u-button_toggle.m-books-nav-button,
+html[appStyle="theClub"] .u-marquee.is-title,
+html[appStyle="theClub"] .m-books { background-image: url("../../assets/images/purple-background.png"); background-color: #340853; }
 .u-button_CTA,
 .u-button_toggle.m-books-nav-button,
-.u-marquee.is-title,
-.m-books { background-image: url("../../assets/images/purple-background.png"); background-color: #340853; }
-.u-button_CTA,
-.u-button_toggle.m-books-nav-button,
-.u-marquee.is-title,
-.m-books {
+html[appStyle="theClub"] .u-marquee.is-title,
+html[appStyle="theClub"] .m-books {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: fixed;
+}
+html[appStyle="theKit"] {
+    background-size: 300% !important;
+    background-position: top center;
 }
 
 .m-books-covers-button:hover,
@@ -235,6 +243,13 @@ main { flex-direction: column; }
     .m-books-header-book-link {
         margin-top: 1.5em;
     }
+    .header {
+        text-align: center;
+    }
+    .header .m-books-header-book-link {
+        display: inline-block;
+        margin: 0 auto !important;
+    }
 
     .m-books-footer {
         position: relative;
@@ -282,6 +297,12 @@ main { flex-direction: column; }
 .u-button_CTA,
 .u-button_toggle,
 .m-books-covers-button { cursor: pointer; }
+
+html[appStyle="theClub"] .is-appStyle_theKit { display: none !important; }
+html[appStyle="theKit"] .is-appStyle_theClub { display: none !important; }
+
+html[appStyle="theKit"] .m-books-covers .m-books-covers-list-item { visibility: hidden !important; }
+html[appStyle="theKit"] .m-books-covers .m-books-covers-list-item[currentPlacement="1"] { visibility: visible !important; }
 /*** END INTERACTIVITY ***/
 
 /*** MEDIA-QUERIES ***/
@@ -339,11 +360,6 @@ main { flex-direction: column; }
     100% { transform: translate3d(var(--vMoveFinalRight), 0, 0); }
 }
 /*** END ANIMATION ***/
-
-/*** CSS HACKS ***/
-html, body, main { overflow-x: hidden; }
-.m-books-header-book-link { visibility: hidden; }
-/*** END CSS HACKS ***/
 
 	/*** JEKYLL ***/
 .m-books-header-book { display: none; }
