@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="js-html pg-">
+<html class="js-html pg-" appStyle="theClub">
 	<head>
 		
 		<meta charset="utf-8" />
@@ -91,7 +91,16 @@
 					<span class="u-marquee-box">#ChapterShe</span>
 					<span class="u-marquee-box">#ChapterShe</span>
 				</div></div>
-				<div class="u-marquee is-subtitle"><div class="u-marquee-wrap">
+				<div class="u-marquee is-subtitle is-appStyle_theClub"><div class="u-marquee-wrap">
+					<span class="u-marquee-box">The Club</span>
+					<span class="u-marquee-box">The Club</span>
+					<span class="u-marquee-box">The Club</span>
+					<span class="u-marquee-box">The Club</span>
+					<span class="u-marquee-box">The Club</span>
+					<span class="u-marquee-box">The Club</span>
+					<span class="u-marquee-box">The Club</span>
+				</div></div>
+				<div class="u-marquee is-subtitle is-appStyle_theKit"><div class="u-marquee-wrap">
 					<span class="u-marquee-box">The Kit</span>
 					<span class="u-marquee-box">The Kit</span>
 					<span class="u-marquee-box">The Kit</span>
@@ -100,6 +109,7 @@
 					<span class="u-marquee-box">The Kit</span>
 					<span class="u-marquee-box">The Kit</span>
 				</div></div>
+				<a class="m-books-header-book-link js-btnKit is-appStyle_theKit" theBook="theQuestions4all">[close the kit]</a>
 			</header>
 
 			<section class="m-discussion d-maxWidth">
@@ -127,7 +137,7 @@
 			</section>
 
 			<section class="m-books js-sctBooks" activeBook="1">
-				<div class="u-marquee is-subtitle"><div class="u-marquee-wrap">
+				<div class="u-marquee is-subtitle is-appStyle_theClub"><div class="u-marquee-wrap">
 					<span class="u-marquee-box">Library</span>
 					<span class="u-marquee-box">Library</span>
 					<span class="u-marquee-box">Library</span>
@@ -140,14 +150,16 @@
 				<div class="m-books-header d-cssCentered">
 					<div class="m-books-header-book is-nthChild-1">
 						<h1 class="m-books-header-book-title">Hello, Beautiful</h1>
-						<h3 class="m-books-header-book-author">by Ann Napolitano</h3>
-						<a  class="m-books-header-book-link">[open the kit]</a>
+						<h3 class="m-books-header-book-author">Ann Napolitano</h3>
+						<a class="m-books-header-book-link js-btnKit" theBook="theQuestions4helloBeautiful">[open the kit]</a>
 					</div>
 					<div class="m-books-header-book is-nthChild-2">
-						<h1 class="m-books-header-book-title">THE NEXT BOOK IS...</h1>
-						<h3 class="m-books-header-book-author">suggest a book</h3>
-						<a href="mailto:hello@babylon19.org" class="m-books-header-book-link">[email us]</a>
+						<h1 class="m-books-header-book-title">The Covenant of Water</h1>
+						<h3 class="m-books-header-book-author">Abraham Verghese</h3>
+						<a class="m-books-header-book-link js-btnKit" theBook="theQuestions4theCovenantOfWater">[open the kit]</a>
 					</div>
+					
+					
 					<div class="m-books-header-book is-nthChild-3">
 						<h1 class="m-books-header-book-title">THE NEXT BOOK IS...</h1>
 						<h3 class="m-books-header-book-author">suggest a book</h3>
@@ -185,11 +197,26 @@
 					</div>
 				</div>
 
-				<div class="u-button_toggle-parent m-books-nav d-cssCentered">
+				<div class="u-button_toggle-parent m-books-nav d-cssCentered is-appStyle_theClub">
 					<span class="m-books-nav-button u-button_toggle js-btnBookNav is-prev"><</span>
 					<span class="m-books-nav-button u-button_toggle js-btnBookNav is-next">></span>
 				</div>
 
+				<div class="m-books-covers"><ul class="m-books-covers-list">
+					<li class="m-books-covers-list-item js-bookItem" activePosition="1" currentPlacement="1"><img src="assets/images/cover_hello-beautiful.png" class="m-books-covers-button js-btnBook" /></li>
+					<li class="m-books-covers-list-item js-bookItem" activePosition="2" currentPlacement="2"><img src="assets/images/cover_the-covenant-of-water.png" class="m-books-covers-button js-btnBook" /></li>
+					
+					
+					<li class="m-books-covers-list-item js-bookItem" activePosition="3" currentPlacement="3"><img src="assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>
+					<li class="m-books-covers-list-item js-bookItem" activePosition="4" currentPlacement="4"><img src="assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>
+					<li class="m-books-covers-list-item js-bookItem" activePosition="5" currentPlacement="5"><img src="assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>
+					<li class="m-books-covers-list-item js-bookItem" activePosition="6" currentPlacement="6"><img src="assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>
+					<li class="m-books-covers-list-item js-bookItem" activePosition="7" currentPlacement="7"><img src="assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>
+					<li class="m-books-covers-list-item js-bookItem" activePosition="8" currentPlacement="8"><img src="assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>
+					<li class="m-books-covers-list-item js-bookItem" activePosition="9" currentPlacement="9"><img src="assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>
+				</ul></div>
+				
+				<!--
 				<div class="m-books-covers"><ul class="m-books-covers-list">
 					<li class="m-books-covers-list-item js-bookItem" activePosition="1" currentPlacement="1"><img src="../assets/images/cover.png" class="m-books-covers-button js-btnBook" /></li>
 					<li class="m-books-covers-list-item js-bookItem" activePosition="2" currentPlacement="2"><img src="../assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>
@@ -201,9 +228,10 @@
 					<li class="m-books-covers-list-item js-bookItem" activePosition="8" currentPlacement="8"><img src="../assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>
 					<li class="m-books-covers-list-item js-bookItem" activePosition="9" currentPlacement="9"><img src="../assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>
 				</ul></div>
+				-->
 
 				<div class="m-books-footer"><div class="m-books-footer-wrap d-cssCentered">
-					<img src="../assets/images/b19-logo-full_black.png" class="m-books-footer-img" />
+					<img src="assets/images/b19-logo-full_black.png" class="m-books-footer-img" />
 				</div></div>
 			</section>
 
