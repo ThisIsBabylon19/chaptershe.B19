@@ -7,7 +7,7 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 /*=== END LIBRARIES ===*/
 
 /*=== CUSTOM ===*/
-var theQuestions4All = [
+var theQuestions4all = [
 	{ title: "What was your favorite scene and why?" },
 	{ title: "How did the character change throughout the story?" },
 	{ title: "Why did you think the author chose this setting? How did it relate to the plot?" },
@@ -35,9 +35,37 @@ var theQuestions4All = [
 	{ title: "How would you rate the book on a scale of 1 to 10?" }
 ]
 
+var theQuestions4helloBeautiful = [
+	{ title: "In what ways does Kate's journey of self-discovery challenge societal expectations of motherhood and marriage?" },
+	{ title: "The novel features several instances of women supporting and uplifting each other. How do these moments contribute to a broader feminist message?" },
+	{ title: "The character of Shannon is an important representation of transgender identity. How does the book address issues related to transgender rights and visibility?" },
+	{ title: "The novel raises questions about the role of memory in shaping our identities. How do these questions relate to the experiences of the female characters in the book?" },
+	{ title: "The book explores themes of female friendship and the power of shared experiences. How do these themes intersect with ideas of women's empowerment?" },
+	{ title: "Kate's journey of self-discovery takes her to a small town where she forms a bakery. How does the setting of the novel contribute to its exploration of feminism?" },
+	{ title: "The novel features several instances of physical and emotional abuse against women. How do these instances contribute to a broader societal discussions about violence against women?" },
+	{ title: "The character of Lacey is an important representation of the complexities of female sexuality. How does the book address issues related to female sexual identity and empowerment?" },
+	{ title: "The novel explores themes of forgiveness and redemption. How do these themes intersect with ideas of women's empowerment and agency?" },
+	{ title: "The book raises questions about the role of honesty and authenticity in relationships. How do these questions relate to broader feminist conversations about power dynamics and equality?" }
+]
+var theQuestions4theCovenantOfWater = [
+	{ title: "How does the character of Sister Mary Joseph Praise challenge tradtional notions of feminity and religious devotion in Indian society?" },
+	{ title: "The novel portrays women in positions of power, such as Matron and Marion Stone. How do these characters challenge gender stereotypes and contribute to broader discussions about women's empowerment?" },
+	{ title: "The character of Ghosh's wife defies societal expectations by choosing to pursue education and career. How does her story contribute to conversations about the importance of women's education and profession fulfillment?" },
+	{ title: "The book explores the theme of motherhood through the characters of Hema and Ghosh's wife. How do their experiences challenge conventional expectations of motherhood and contribute to broader conversations about women's agency and autonomy?" },
+	{ title: "The novel portrays the relationship between Hema and Ghosh as one based on mutual respect and shared goals. How does this relationship challenge tradtional gender roles and contribute to broader coversations about the importance of supportive partnerships?" },
+	{ title: "The character of Sister Mary Joseph Praise chooses to abandon her religious vows in order to pursue her own desires. How does her story contribute to broader discussions about the importance of individual agency and autonomy?" },
+	{ title: "The book feautures several instances of women supporting and uplifting each other, such as the friendship between Sister Mary Joseph Praise and Marion Stone. How does Verghese use these instances to convey a sense of sisterhood and solidarity?" },
+	{ title: "The novel raises questions about the nature of power and privilege, particularly in the context of the relationship between the British and Indian characters. How do these themes relate the broader discussion about colonialism and patriarchy?" },
+	{ title: "The character of Maron Stone faces discrimination and bias in the male-dominated field of medicine. How does her story contribute to conversations about the importance of women's represantation and leadership in all fields?" },
+	{ title: "The novel portrays women as complex, multi-dimensional characters with their own desires, goals, and struggles. How does this represantation challenge one-dimensional portrayals of women in literature?" }
+]
+
 var intobinary = $.noConflict();
 intobinary(document).ready(function() {
 	/*** GLOBAL VARIABLES & OBJECTS ***/
+	var htmlTag = intobinary("html"),
+		bookID = "theQuestions4all";
+
 	var sctBooksTag = intobinary(".js-sctBooks");
 	var activeBook = 1;
 
@@ -49,7 +77,7 @@ intobinary(document).ready(function() {
 	/*** END GLOBAL VARIABLES & OBJECTS ***/
 	
 	/*** SETUP ***/
-	playQuiz(theQuestions4All);
+	setupQuiz();
 	/*** END SETUP ***/
 
 	/*** ACTIONS ***/
@@ -67,13 +95,27 @@ intobinary(document).ready(function() {
 		switchBooks("left");
 	});
 
+	intobinary(".js-btnKit").click(function() {
+		if(htmlTag.attr("appStyle") == "theClub") {
+			htmlTag.attr("appStyle", "theKit");
+			intobinary(".js-btnKit").html("[close the kit]");
+			bookID = intobinary(this).attr("theBook");
+		}
+		else if(htmlTag.attr("appStyle") == "theKit") {
+			htmlTag.attr("appStyle", "theClub");
+			intobinary(".js-btnKit").html("[open the kit]");
+			bookID = "theQuestions4all";
+		}
+
+		setupQuiz();
+	});
+
 	intobinary(".js-btnNextQuestion").click(function() {
 //		resetQuestion();
 		nextQuestion();
 	});
 	intobinary(".js-btnRefresh").click(function() {
-		qNoIndex = 0;
-		playQuiz(theQuestions4All);
+		setupQuiz();
 	});
 	/*** END ACTIONS ***/
 
@@ -157,6 +199,20 @@ intobinary(document).ready(function() {
 			theQTimerTag.textContent = "--:--";
 			
 			thePauseButtonTag.addClass("is-hidden");
+		}
+		*/
+	}
+
+	function setupQuiz() {
+		qNoIndex = 0;
+		if(bookID == "theQuestions4all") { playQuiz(theQuestions4all); }
+		else if (bookID == "theQuestions4helloBeautiful") { playQuiz(theQuestions4helloBeautiful); }
+		else if (bookID == "theQuestions4theCovenantOfWater") { playQuiz(theQuestions4theCovenantOfWater); }
+
+		/*
+		if(htmlTag.attr("appStyle") == "theClub") { playQuiz(theQuestions4all); }
+		else if(htmlTag.attr("appStyle") == "theKit") {
+			playQuiz(theQuestions4helloBeautiful);
 		}
 		*/
 	}
