@@ -113,7 +113,7 @@ html[appStyle="theClub"] .m-books {
     background-position: fixed;
 }
 html[appStyle="theKit"] {
-    background-size: 300% !important;
+    background-size: auto 300% !important;
     background-position: top center;
 }
 
@@ -279,7 +279,7 @@ main { flex-direction: column; }
         padding: 2em;
     }
     .m-discussion-text {
-        padding: 5em;
+        padding: 5em 1em;
     }
     .m-discussion-text-question {
         min-height: 3em;
@@ -309,6 +309,15 @@ html[appStyle="theKit"] .m-books-covers .m-books-covers-list-item[currentPlaceme
 @media all and (max-width: 50em) {
     body, html, main { font-size: 16px; }
     .u-marquee.is-title .u-marquee-box { font-size: 1.5em; }
+    
+    .m-books-covers-list-item { display: none; }
+    .m-books-covers-list-item[currentPlacement="1"],
+    .m-books-covers-list-item[currentPlacement="2"],
+    .m-books-covers-list-item[currentPlacement="9"] { display: inline-block; }
+    .m-books-covers-list-item[currentPlacement="2"],
+    .m-books-covers-list-item[currentPlacement="9"] { width: 25%; height: auto; }
+    .m-books-covers-list-item[currentPlacement="2"] { right: 0; }
+    .m-books-covers-list-item[currentPlacement="9"] { left: 0; }
 }
 @media all and (min-width: 50em) {
     body, html, main { font-size: 18px; }
@@ -360,6 +369,10 @@ html[appStyle="theKit"] .m-books-covers .m-books-covers-list-item[currentPlaceme
     100% { transform: translate3d(var(--vMoveFinalRight), 0, 0); }
 }
 /*** END ANIMATION ***/
+
+/*** CSS HACKS ***/
+.header .u-marquee { overflow: hidden; }
+/*** END CSS HACKS ***/
 
 	/*** JEKYLL ***/
 .m-books-header-book { display: none; }
