@@ -59,8 +59,6 @@ html[appStyle="theKit"] .footer { background-color: #eee; }
 .m-discussion-text-index { font-family: "Bauhaus"; line-height: 1.15em; word-spacing: initial !important; }
 main { font-family: "Impact"; word-spacing: .15em; }
 
-.m-books-header-book-title,
-.m-discussion-text-question { font-size: 3em; }
 .m-books-header-book-author { font-size: 1.5em; }
 
 .footer,
@@ -237,7 +235,7 @@ main { flex-direction: column; }
     .m-books-covers-list-item[currentPlacement="8"] .m-books-covers-button { position: relative; top: -9em; }
 
     .m-books-header-book {
-        padding: 1.5em;
+        padding: 1.5em .5em;
         margin-bottom: 2.5em;
     }
     .m-books-header-book-link {
@@ -309,11 +307,13 @@ html[appStyle="theKit"] .m-books-covers .m-books-covers-list-item[currentPlaceme
 @media all and (max-width: 50em) {
     body, html, main { font-size: 16px; }
     .u-marquee.is-title .u-marquee-box { font-size: 1.5em; }
+    .m-books-header-book-title,
+    .m-discussion-text-question { font-size: 2.5em; }
     
     .m-books-covers-list-item { display: none; }
     .m-books-covers-list-item[currentPlacement="1"],
     .m-books-covers-list-item[currentPlacement="2"],
-    .m-books-covers-list-item[currentPlacement="9"] { display: inline-block; }
+    .m-books-covers-list-item[currentPlacement="9"] { display: inline-block; padding: .5em; }
     .m-books-covers-list-item[currentPlacement="2"],
     .m-books-covers-list-item[currentPlacement="9"] { width: 25%; height: auto; }
     .m-books-covers-list-item[currentPlacement="2"] { right: 0; }
@@ -322,6 +322,8 @@ html[appStyle="theKit"] .m-books-covers .m-books-covers-list-item[currentPlaceme
 @media all and (min-width: 50em) {
     body, html, main { font-size: 18px; }
     .u-marquee.is-title .u-marquee-box { font-size: 2em; }
+    .m-books-header-book-title,
+    .m-discussion-text-question { font-size: 3em; }
 }
 /*** END MEDIA-QUERIES ***/
 
@@ -371,7 +373,8 @@ html[appStyle="theKit"] .m-books-covers .m-books-covers-list-item[currentPlaceme
 /*** END ANIMATION ***/
 
 /*** CSS HACKS ***/
-.header .u-marquee { overflow: hidden; }
+.header .u-marquee,
+.m-books .u-marquee { overflow: hidden; }
 /*** END CSS HACKS ***/
 
 	/*** JEKYLL ***/
