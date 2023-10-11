@@ -59,6 +59,18 @@ var theQuestions4theCovenantOfWater = [
 	{ title: "The character of Maron Stone faces discrimination and bias in the male-dominated field of medicine. How does her story contribute to conversations about the importance of women's represantation and leadership in all fields?" },
 	{ title: "The novel portrays women as complex, multi-dimensional characters with their own desires, goals, and struggles. How does this represantation challenge one-dimensional portrayals of women in literature?" }
 ]
+var theQuestions4womenWhoRunWithTheWolves = [
+	{ title: "Analyze the Cinder Maid's transformation from ashes to royalty and its implications for women's empowerment and self-realization." },
+	{ title: "How does the book challenge traditional gender roles and stereotypes overall?" },
+	{ title: "How does the story of the Bluebeard relate to issues of autonomy and secrecy in women's lives?" },
+	{ title: "What do we learn about the power of collecting and preserving bones from the story of La Loba? How can women apply this metaphorically to their lives?" },
+	{ title: "How does the book address the concept of reclaiming one's wild and authentic self?" },
+	{ title: "The book address the concept of the 'psychic wolf' deeply connected to women's intuition and protection of oneself. How can women harness their psychic wolves in their daily lives and relationships?" },
+	{ title: "Explore the symbolism of the crescent moon and the bear in the story. How can these symbols empower women in their own journeys?" },
+	{ title: "Discuss 'The Red Cload'. Discuss the role of red as a recurring color in the book. How does it represent passion and transformation for women?" },
+	{ title: "Discuss the role of storytelling and mythology in empowering women as presented in the book." },
+	{ title: "What lessons can we learn from Vasalisa's journey into the dark forest and her encounters with Baby Yaga? How does this relate to female intuition and courage?" }
+]
 
 var intobinary = $.noConflict();
 intobinary(document).ready(function() {
@@ -100,6 +112,8 @@ intobinary(document).ready(function() {
 			htmlTag.attr("appStyle", "theKit");
 			intobinary(".js-btnKit").html("[close the kit]");
 			bookID = intobinary(this).attr("theBook");
+			
+//			alert(bookID);
 		}
 		else if(htmlTag.attr("appStyle") == "theKit") {
 			htmlTag.attr("appStyle", "theClub");
@@ -208,6 +222,9 @@ intobinary(document).ready(function() {
 		if(bookID == "theQuestions4all") { playQuiz(theQuestions4all); }
 		else if (bookID == "theQuestions4helloBeautiful") { playQuiz(theQuestions4helloBeautiful); }
 		else if (bookID == "theQuestions4theCovenantOfWater") { playQuiz(theQuestions4theCovenantOfWater); }
+		else if (bookID == "theQuestions4womenWhoRunWithTheWolves") { playQuiz(theQuestions4womenWhoRunWithTheWolves); }
+
+		/*** alert(manual upload todo above.) ***/
 
 		/*
 		if(htmlTag.attr("appStyle") == "theClub") { playQuiz(theQuestions4all); }
