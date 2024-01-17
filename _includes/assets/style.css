@@ -20,16 +20,19 @@
 .u-button_toggle,
 .u-button_toggle:after,
 .u-marquee.is-subtitle { background-color: black; }
-* { color: black; }
+*,
+html[appStyle="theKit"] .m-books-header-book .u-button_buy { color: black; }
 
 html[appStyle="theClub"],
 html[appStyle="theKit"] .u-button_CTA,
 html[appStyle="theClub"] .m-books-footer:before,
-html[appStyle="theKit"] .footer { background-color: #eee; }
+html[appStyle="theKit"] .footer,
+.u-button_buy { background-color: #eee; }
+html[appStyle="theKit"] .m-books-header-book *,
+html[appStyle="theKit"] .m-discussion-text *,
 .u-button_toggle,
 .u-marquee.is-subtitle .u-marquee-box { color: #eee; }
-html[appStyle="theKit"] .m-books-header-book *,
-html[appStyle="theKit"] .m-discussion-text * { color: #eee !important; }
+ { color: #eee !important; }
 .m-books-footer:after { background-image: linear-gradient(transparent{% for i in (1..3) %}, #eee{% endfor %}); }
 
 .u-button_toggle.m-books-nav-button:after { background-color: transparent !important; }
@@ -156,6 +159,7 @@ main { flex-direction: column; }
     .u-button_toggle { align-items: center; }
     .u-button_toggle { justify-content: center; }
 
+	.u-button_buy,
     .u-button_CTA {
         display: inline-block;
         padding: 1em 2em;
@@ -279,6 +283,7 @@ main { flex-direction: column; }
 
 /*** INTERACTIVITY ***/
 .m-books-covers-list-item[currentPlacement="1"] .m-books-covers-button { cursor: initial !important; }
+.u-button_buy,
 .u-button_CTA,
 .u-button_toggle,
 .m-books-covers-button { cursor: pointer; }

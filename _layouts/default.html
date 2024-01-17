@@ -54,6 +54,10 @@
 					<div class="m-books-header-book is-nthChild-{{ data[0] }}">
 						<h1 class="m-books-header-book-title">{% for content in data[1] %}{{ content.title }}{% endfor %}</h1>
 						<h3 class="m-books-header-book-author">{% for content in data[1] %}{{ content.author }}{% endfor %}</h3>
+						
+						<a href="" class="u-button_buy">Buy on Amazon</a>
+						<br />
+						
 						<a class="m-books-header-book-link js-btnKit" theBook="theQuestions4{% for content in data[1] %}{{ content.id }}{% endfor %}">[open the kit]</a>
 					</div>{% endfor %}{% endfor %}
 					{% assign nextI = i | plus: 1 %}
