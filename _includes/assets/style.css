@@ -28,6 +28,8 @@ html[appStyle="theClub"] .m-books-footer:before,
 html[appStyle="theKit"] .footer { background-color: #eee; }
 .u-button_toggle,
 .u-marquee.is-subtitle .u-marquee-box { color: #eee; }
+html[appStyle="theKit"] .m-books-header-book *,
+html[appStyle="theKit"] .m-discussion-text * { color: #eee !important; }
 .m-books-footer:after { background-image: linear-gradient(transparent{% for i in (1..3) %}, #eee{% endfor %}); }
 
 .u-button_toggle.m-books-nav-button:after { background-color: transparent !important; }
