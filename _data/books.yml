@@ -2,6 +2,7 @@
   - id: "helloBeautiful"
   - title: "Hello, Beautiful"
   - author: "Ann Napolitano"
+  - amazon: "https://amzn.to/423TmgH"
   - cover: "cover_hello-beautiful.png"
   - questions:
     - "In what ways does Kate's journey of self-discovery challenge societal expectations of motherhood and marriage?"
@@ -18,6 +19,7 @@
   - id: "theCovenantOfWater"
   - title: "The Covenant of Water"
   - author: "Abraham Verghese"
+  - amazon: "https://amzn.to/3SmrQrO"
   - cover: "cover_the-covenant-of-water.png"
   - questions:
     - "How does the character of Sister Mary Joseph Praise challenge tradtional notions of feminity and religious devotion in Indian society?"
@@ -34,6 +36,7 @@
   - id: "womenWhoRunWithTheWolves"
   - title: "Women Who Run With the Wolves"
   - author: "Clarissa Pinkola Estés, PhD"
+  - amazon: "https://amzn.to/3Smelbq"
   - cover: "cover_women-who-run-with-the-wolves.png"
   - questions:
     - "Analyze the Cinder Maid's transformation from ashes to royalty and its implications for women's empowerment and self-realization."
