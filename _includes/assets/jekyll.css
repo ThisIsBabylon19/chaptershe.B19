@@ -1,0 +1,13 @@
+/*** JEKYLL ***/
+.m-books-header-book { display: none; }{% for i in (1..9) %}
+.m-books[activeBook="{{ forloop.index }}"] .m-books-header-book.is-nthChild-{{ forloop.index }},{% endfor %}
+.jekyllPlaceholderClassName { display: block !important; }
+
+{% for i in (1..9) %}
+.m-books-covers-list-item:nth-child({{ i }}) .m-books-covers-button { background-image: url("../../assets/images/cover-{{ i }}.png"); }{% endfor %}
+.m-books-covers-button {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*** END JEKYLL ***/

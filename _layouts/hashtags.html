@@ -1,0 +1,40 @@
+---
+---
+<!DOCTYPE html>
+<html class="js-html pg-{{ page.key }}">
+	<head>
+		{% include components/meta-tags.html %}
+	</head>
+	
+	<body>
+		<main>
+			<header class="header d-midWrap">
+				<img src="/assets/images/b19-logo-full_black.png" class="header-logo" />
+
+				<div class="header-hashtag">{% for vContentWords in page.hashtag-words %}{% capture vContentWordsSize %}{{ forloop.length }}{% endcapture %}{% endfor %}
+					<img src="/assets/images/placeholder-1x1.png" class="header-hashtag-hash nthSize{{ vContentWordsSize }}" />
+					<div class="header-hashtag-words">{% for vContentWords in page.hashtag-words %}
+						<span class="header-hashtag-words-word">{{ vContentWords | capitalize }}</span>{% endfor %}
+					</div>
+				</div>
+
+				<p class="header-description">{{ page.hashtag-description }}</p>
+			</header>
+
+			<section class="content"><ul class="content-list">{% assign vImagesPath = page.hashtag | remove: '#' %}
+				{% for media in site.static_files %}{% if media.path contains vImagesPath %}{% capture vImagesTotal %}{{ vImagesTotal | plus: 1 }}{% endcapture %}{% endif %}{% endfor %}
+
+				{% for media in site.static_files %}{% if media.path contains vImagesPath %}{% capture vImagesCount %}{{ vImagesCount | plus: 1 }}{% endcapture %}
+				<li class="content-list-item">
+					{% if media.path contains ".png" %}<img src="{{ media.path }}" class="content-media" />{% else %}VIDEOTAG{% endif %}
+					<span class="content-index">{{ vImagesCount }}/{{ vImagesTotal }}</span>
+				</li>{% endif %}{% endfor %}
+			</ul></section>
+
+			<section class="u-marquee is-variant_left"><div class="u-marquee-wrap">{% for i in (1..4) %}
+				<span class="u-marquee-box">{{ page.hashtag }}</span>{% endfor %}
+			</div></section>
+		</main>
+
+	</body>
+</html>

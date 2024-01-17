@@ -1,0 +1,41 @@
+---
+key: "hashtag"
+hashtag: "#FeminaSpell"
+hashtag-words: ["femina", "spell"]
+---
+<!DOCTYPE html>
+<html class="js-html pg-{{ page.key }}">
+	<head>
+		{% include components/meta-tags.html %}
+	</head>
+	
+	<body>
+		<main>
+			<header class="header d-midWrap">
+				<img src="/assets/images/b19-logo-full_black.png" class="header-logo" />
+
+				<div class="header-hashtag">
+					{% for file in site.data.hashtags %}{% for data in file %}{% if data[0] == page.hashtag %}{% for content in data[1] %}{% for vContentWords in content.words %}{% capture vContentWordsSize %}{{ forloop.length }}{% endcapture %}{% endfor %}{% endfor %}{% endif %}{% endfor %}{% endfor %}
+
+					<img src="/assets/images/placeholder-1x1.png" class="header-hashtag-hash nthSize{{ vContentWordsSize }}" />
+					<div class="header-hashtag-words">{% for file in site.data.hashtags %}{% for data in file %}{% if data[0] == page.hashtag %}{% for content in data[1] %}{% for vContentWords in content.words %}
+						<span class="header-hashtag-words-word">{{ vContentWords | capitalize }}</span>{% endfor %}{% endfor %}{% endif %}{% endfor %}{% endfor %}
+					</div>
+				</div>
+
+				<p class="header-description">Lorem ipsum dolor sit amet consectetur adipiscing elit et, habitasse netus posuere aliquet potenti neque venenatis rhoncus, ligula sollicitudin eget lobortis primis natoque lacinia. Dignissim nullam scelerisque hac feugiat et convallis parturient dictum phasellus, montes velit taciti ac dictumst suspendisse suscipit nam ultricies, auctor aptent ut pulvinar sapien iaculis vehicula nunc. Fringilla rhoncus augue tincidunt posuere non condimentum porttitor massa, morbi lectus ac potenti cursus facilisi curae, hendrerit sem facilisis lacinia mollis luctus risus.</p>
+			</header>
+
+			<section class="content"><ul class="content-list">{% assign vImagesPath = page.hashtag | remove: '#' %}
+				{% for media in site.static_files %}{% if media.path contains vImagesPath %}{% capture vImagesTotal %}{{ vImagesTotal | plus: 1 }}{% endcapture %}{% endif %}{% endfor %}
+
+				{% for media in site.static_files %}{% if media.path contains vImagesPath %}{% capture vImagesCount %}{{ vImagesCount | plus: 1 }}{% endcapture %}
+				<li class="content-list-item">
+					{% if media.path contains ".png" %}<img src="{{ media.path }}" class="content-media" />{% else %}VIDEOTAG{% endif %}
+					<span class="content-index">{{ vImagesCount }}/{{ vImagesTotal }}</span>
+				</li>{% endif %}{% endfor %}
+			</ul></section>
+		</main>
+
+	</body>
+</html>
