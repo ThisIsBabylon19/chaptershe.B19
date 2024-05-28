@@ -7,4 +7,19 @@ IDs:
   msvalidate: ""
   alexa: ""
   norton: ""
+  
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  partners:
+    output: true
+    permalink: /partners/:path/
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "partners"
+    values:
+      layout: "partners"

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: welcome
 permalink: /
 ---
 AAA

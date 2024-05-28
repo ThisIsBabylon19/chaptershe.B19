@@ -1,0 +1,17 @@
+
+			<header class="header">
+				<div class="u-marquee is-title"><div class="u-marquee-wrap">{% for i in (1..4) %}
+					<span class="u-marquee-box">#ChapterShe</span>{% endfor %}
+				</div></div>{% if page.layout == "welcome" %}
+				<div class="u-marquee is-subtitle is-appStyle_theClub"><div class="u-marquee-wrap">{% for i in (1..7) %}
+					<span class="u-marquee-box">The Club</span>{% endfor %}
+				</div></div>
+				<div class="u-marquee is-subtitle is-appStyle_theKit"><div class="u-marquee-wrap">{% for i in (1..7) %}
+					<span class="u-marquee-box">The Kit</span>{% endfor %}
+				</div></div>{% elsif page.layout == "partners" %}
+				<div class="u-marquee is-subtitle is-appStyle_theClub"><div class="u-marquee-wrap">{% for i in (1..5) %}
+					<span class="u-marquee-box">In Partnership With <br />Goethe Institut</span>{% endfor %}
+				</div></div>
+				{% endif %}
+				<a class="m-books-header-book-link js-btnKit is-appStyle_theKit" theBook="theQuestions4all">[close the kit]</a>
+			</header>

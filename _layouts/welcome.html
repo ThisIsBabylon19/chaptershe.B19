@@ -1,0 +1,83 @@
+---
+layout: default
+---
+		<main>
+			{% include components/sections/header.html %}
+
+			<section class="m-discussion d-maxWidth">
+				<div class="m-discussion-text">
+					<span class="m-discussion-text-index js-quizQuestionIndex">1/99</span>
+					<p class="u-fancyText m-discussion-text-question js-quizQuestion d-cssCentered">Who is your favorite character in this book? Who did you most identify with, and why?</p>
+					<!--
+					<span class="m-discussion-text-index">-- : --</span>
+					-->
+				</div>
+
+				<div class="m-discussion-nav">
+					<span class="u-button_CTA js-btnNextQuestion">Next Question</span>
+
+					<div class="u-button_toggle-parent m-discussion-nav-sub d-cssCentered">
+						<span class="u-button_toggle is-refresh js-btnRefresh">R</span>
+
+						<!--
+						<span class="u-button_toggle">S</span>
+						<span class="u-button_toggle">T</span>
+						<span class="u-button_toggle">R</span>
+						-->
+					</div>
+				</div>
+			</section>
+
+			<section class="m-books js-sctBooks" activeBook="1">
+				<div class="u-marquee is-subtitle is-appStyle_theClub"><div class="u-marquee-wrap">{% for i in (1..7) %}
+					<span class="u-marquee-box">Library</span>{% endfor %}
+				</div></div>
+
+				<div class="m-books-header d-cssCentered">{% for file in site.data.books %}{% assign i = 0 %}{% capture i %}{{ forloop.index }}{% endcapture %}{% for data in file %}
+					<div class="m-books-header-book is-nthChild-{{ data[0] }}">
+						<h1 class="m-books-header-book-title">{% for content in data[1] %}{{ content.title }}{% endfor %}</h1>
+						<h3 class="m-books-header-book-author">{% for content in data[1] %}{{ content.author }}{% endfor %}</h3>
+						
+						<a href="{% for content in data[1] %}{{ content.amazon }}{% endfor %}" class="u-button_buy">Buy on Amazon</a>
+						<br />
+						
+						<a class="m-books-header-book-link js-btnKit" theBook="theQuestions4{% for content in data[1] %}{{ content.id }}{% endfor %}">[open the kit]</a>
+					</div>{% endfor %}{% endfor %}
+					{% assign nextI = i | plus: 1 %}
+					{% for j in (nextI..9) %}
+					<div class="m-books-header-book is-nthChild-{{ j }}">
+						<h1 class="m-books-header-book-title">THE NEXT BOOK IS...</h1>
+						<h3 class="m-books-header-book-author">suggest a book</h3>
+						<a href="mailto:hello@babylon19.org" class="m-books-header-book-link">[email us]</a>
+					</div>{% endfor %}
+				</div>
+
+				<div class="u-button_toggle-parent m-books-nav d-cssCentered is-appStyle_theClub">
+					<span class="m-books-nav-button u-button_toggle js-btnBookNav is-prev"><</span>
+					<span class="m-books-nav-button u-button_toggle js-btnBookNav is-next">></span>
+				</div>
+
+				<div class="m-books-covers"><ul class="m-books-covers-list">{% for file in site.data.books %}{% assign i = 0 %}{% capture i %}{{ forloop.index }}{% endcapture %}{% for data in file %}
+					<li class="m-books-covers-list-item js-bookItem" activePosition="{{ data[0] }}" currentPlacement="{{ data[0] }}"><img src="assets/images/{% for content in data[1] %}{{ content.cover }}{% endfor %}" class="m-books-covers-button js-btnBook" /></li>{% endfor %}{% endfor %}
+					{% assign nextI = i | plus: 1 %}
+					{% for j in (nextI..9) %}
+					<li class="m-books-covers-list-item js-bookItem" activePosition="{{ j }}" currentPlacement="{{ j }}"><img src="assets/images/placeholder-cover.png" class="m-books-covers-button js-btnBook" /></li>{% endfor %}
+				</ul></div>
+				
+				<!--
+				<div class="m-books-covers"><ul class="m-books-covers-list">{% for i in (1..9) %}
+					<li class="m-books-covers-list-item js-bookItem" activePosition="{{ i }}" currentPlacement="{{ i }}"><img src="../assets/images/{% if forloop.first %}cover{% else %}placeholder-cover{% endif %}.png" class="m-books-covers-button js-btnBook" /></li>{% endfor %}
+				</ul></div>
+				-->
+
+				<div class="m-books-footer"><div class="m-books-footer-wrap d-cssCentered">
+					<img src="assets/images/b19-logo-full_black.png" class="m-books-footer-img" />
+				</div></div>
+			</section>
+
+			<footer class="footer">
+				<p>&copy; Copyrights 2023. All rights reserved.</p>
+			</footer>
+		</main>
+		
+		{% include components/platform-tags.html %}
