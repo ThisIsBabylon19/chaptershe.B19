@@ -1,9 +1,32 @@
 ---
 layout: default
 ---
+		<main>
 			{% include components/sections/header.html %}
 			
 			<section class="audio">
+				<audio class="audio-tag" controls>
+					<!--
+					<source src="/assets/audios/placeholder.m4a" type="audio/m4a" />
+					-->
+					<source src="/assets/partners/goethe-institut/a-way-of-being.mp3" type="audio/mp3" />
+								
+					The browser does not support audio elements.
+				</audio>
+							
+				<figure class="audio-book">
+					<img src="/assets/images/partner-book.png" class="audio-book-art" />
+							
+					<img src="/assets/images/cover-placeholder.png" class="audio-book-cover" />
+				</figure>
 			</section>
 			
-			
+			<footer class="footer">
+				&copy; Copyrights 2024 Babylon19. All rights reserved.
+			</footer>
+			<header class="header">
+				<div class="u-marquee is-title"><div class="u-marquee-wrap">{% for i in (1..4) %}
+					<span class="u-marquee-box">#ChapterShe</span>{% endfor %}
+				</div></div>
+			</header>
+		</main>
