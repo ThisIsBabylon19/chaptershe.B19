@@ -307,12 +307,12 @@ html[appStyle="theKit"] {
 		max-width: 70%; max-height: 50vh;
 	}
 	.audio-book-cover {
-		position: relative; top: -10em;
+		position: relative; top: -7em;
 		width: 19%;
 	}
 	
 	.audio-tag {
-		position: relative; top: 70vh;
+		position: relative; top: 55%;
 		width: 50%;
 		padding: .5em;
 	}
