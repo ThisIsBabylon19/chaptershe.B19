@@ -13,9 +13,7 @@ layout: default
 			  <script type="module">
 				// Import the function from your JS module
 				import { checkMembership } from '/assets/scripts/db/checkmembers.js';
-				</script>
-				<!--
-				<script>
+
 				const resultEl = document.getElementById('result');
 				const inputEl = document.getElementById('usernameInput');
 				const btnEl = document.getElementById('checkBtn');
@@ -28,7 +26,8 @@ layout: default
 				  }
 
 				  const data = await checkMembership(username);
-
+alert(data)
+					/*
 				  if (data.error) {
 					resultEl.textContent = "Error: " + data.error;
 					return;
@@ -41,7 +40,7 @@ layout: default
 					const status = data.hasPaid ? "✅ Paid" : "⚠️ Not Paid";
 					resultEl.textContent = `${data.username} is a member (${status})`;
 				  }
+				  */
 				});
 			  </script>
-			  -->
 		</main>
