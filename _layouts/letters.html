@@ -40,10 +40,10 @@ alert(data)
 
 				  if (!data.isMember) {
 				  alert(data);
-					resultEl.textContent = `${data.username} is NOT a member ❌`;
+					resultEl.textContent = `${username} is NOT a member ❌`;
 				  } else {
 					const status = data.hasPaid ? "✅ Paid" : "⚠️ Not Paid";
-					resultEl.textContent = `${data.username} is a member (${status})`;
+					resultEl.textContent = `${username} is a member (${status})`;
 				  }
 				});
 			  </script>
