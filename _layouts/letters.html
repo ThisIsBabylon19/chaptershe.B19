@@ -12,7 +12,7 @@ layout: default
 
 			  <script type="module">
 				// Import the function from your JS module
-				import { checkMembership } from '/assets/scripts/db/checkmembers.js';
+//				import { checkMembership } from '/assets/scripts/db/checkmembers.js';
 
 				const resultEl = document.getElementById('result');
 				const inputEl = document.getElementById('usernameInput');
@@ -24,10 +24,15 @@ layout: default
 					resultEl.textContent = "Please enter a username!";
 					return;
 				  }
+const res = await fetch("/.netlify/functions/checkmembers", {
+    method: "POST",
+    body: JSON.stringify({ username })
+  });
 
-				  const data = await checkMembership(username);
+const data = await res.json();
+//				  const data = await checkMembership(username);
 alert(data)
-					/*
+
 				  if (data.error) {
 					resultEl.textContent = "Error: " + data.error;
 					return;
@@ -40,7 +45,6 @@ alert(data)
 					const status = data.hasPaid ? "✅ Paid" : "⚠️ Not Paid";
 					resultEl.textContent = `${data.username} is a member (${status})`;
 				  }
-				  */
 				});
 			  </script>
 		</main>

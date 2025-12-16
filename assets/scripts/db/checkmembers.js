@@ -8,6 +8,7 @@ export async function checkMembership(username) {
     });
 
     const data = await res.json();
+	alert(data);
     return data;
 
   } catch (err) {
