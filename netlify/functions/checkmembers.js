@@ -1,17 +1,42 @@
-// This is a module
-export async function checkMembership(username) {
-  if (!username) return;
+// netlify/functions/checkmembers.js
+const { Client } = require("pg");
 
+exports.handler = async (event) => {
   try {
-    const res = await fetch('/.netlify/functions/checkmembers', {
-      method: 'POST',
-      body: JSON.stringify({ username })
+    const { username } = JSON.parse(event.body);
+    if (!username) {
+      return { statusCode: 400, body: JSON.stringify({ error: "Username required" }) };
+    }
+
+    const client = new Client({
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
     });
 
-    const data = await res.json();
-    return data; // { username, isMember, hasPaid }
+    await client.connect();
+
+    const res = await client.query(
+      "SELECT * FROM members WHERE username = $1",
+      [username]
+    );
+
+    await client.end();
+
+    if (res.rows.length === 0) {
+      return { statusCode: 200, body: JSON.stringify({ username, isMember: false }) };
+    }
+
+    const { haspaid } = res.rows[0];
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ username, isMember: true, hasPaid: haspaid })
+    };
+
   } catch (err) {
-    console.error(err);
-    return { username, isMember: false, error: err.message };
+    console.error("Function error:", err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: err.message })
+    };
   }
-}
+};
