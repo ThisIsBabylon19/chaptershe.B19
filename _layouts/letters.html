@@ -33,6 +33,7 @@ layout: default
 				  }
 
 				  if (!data.isMember) {
+				  alert(data);
 					resultEl.textContent = `${data.username} is NOT a member ❌`;
 				  } else {
 					const status = data.hasPaid ? "✅ Paid" : "⚠️ Not Paid";
