@@ -24,7 +24,7 @@ layout: default
 					resultEl.textContent = "Please enter a username!";
 					return;
 				  }
-const res = await fetch("/netlify/functions/checkmembers", {
+const res = await fetch("/.netlify/functions/checkmembers", {
     method: "POST",
     body: JSON.stringify({ username })
   });
