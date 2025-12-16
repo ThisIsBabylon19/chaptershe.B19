@@ -1,3 +1,4 @@
+/*
 // This is a module
 export async function checkMembership(username) {
   if (!username) return;
@@ -15,3 +16,4 @@ export async function checkMembership(username) {
     return { username, isMember: false, error: err.message };
   }
 }
+*/
