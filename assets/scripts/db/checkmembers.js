@@ -1,7 +1,4 @@
-// This is a module
 export async function checkMembership(username) {
-  if (!username) return;
-
   try {
     const res = await fetch('/.netlify/functions/checkmembers', {
       method: 'POST',
@@ -9,9 +6,10 @@ export async function checkMembership(username) {
     });
 
     const data = await res.json();
-    return data; // { username, isMember, hasPaid }
+    return data;
+
   } catch (err) {
-    console.error(err);
+    console.error("Fetch error:", err);
     return { username, isMember: false, error: err.message };
   }
 }
