@@ -1,0 +1,43 @@
+---
+layout: default
+---
+		<main>
+			@b19andmother
+			<h1>Check Membership</h1>
+
+			  <input type="text" id="usernameInput" placeholder="Enter username">
+			  <button id="checkBtn">Check</button>
+
+			  <p id="result"></p>
+
+			  <script type="module">
+				// Import the function from your JS module
+				import { checkMembership } from '/assets/scripts/db/checkmembers.js';
+
+				const resultEl = document.getElementById('result');
+				const inputEl = document.getElementById('usernameInput');
+				const btnEl = document.getElementById('checkBtn');
+
+				btnEl.addEventListener('click', async () => {
+				  const username = inputEl.value.trim();
+				  if (!username) {
+					resultEl.textContent = "Please enter a username!";
+					return;
+				  }
+
+				  const data = await checkMembership(username);
+
+				  if (data.error) {
+					resultEl.textContent = "Error: " + data.error;
+					return;
+				  }
+
+				  if (!data.isMember) {
+					resultEl.textContent = `${data.username} is NOT a member ❌`;
+				  } else {
+					const status = data.hasPaid ? "✅ Paid" : "⚠️ Not Paid";
+					resultEl.textContent = `${data.username} is a member (${status})`;
+				  }
+				});
+			  </script>
+		</main>

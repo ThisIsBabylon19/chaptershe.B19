@@ -9,6 +9,7 @@
 	<body>
 		{{ content }}
 
-		<script src="../assets/scripts/chapter-she-dot-babylon19-dot-org.js"></script>
+		{% if page.layout != "letters" %}
+		<script src="../assets/scripts/chapter-she-dot-babylon19-dot-org.js"></script>{% endif %}
 	</body>
 </html>

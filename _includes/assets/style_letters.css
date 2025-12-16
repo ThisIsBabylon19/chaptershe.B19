@@ -1,0 +1,71 @@
+/*** COLORS ***/{% assign vColorPurple = "#340853" %}
+{ background-color: {{ vColorPurple }}; }
+
+ { background-color: #eee; }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+@font-face{font-family:"Bauhaus";src:url("../../assets/fonts/BAUHS93.TTF");}
+@font-face{font-family:"Impact";src:url("../../assets/fonts/impact.TTF");}
+
+main { font-family: "Impact"; word-spacing: .15em; }
+ { font-family: "Bauhaus"; line-height: 1.15em; word-spacing: initial !important; }
+
+ { font-size: 1.5em; }
+/*** END FONTS ***/
+
+/*** MEDIA ***/
+* { background-size: cover; }
+
+.u-fancyText {
+    background-image: url("../../assets/images/purple-background.png");
+    background-size: cover;
+    background-position: fixed;
+    background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -o-background-clip: text;
+    background-fill-color: transparent;
+        -webkit-background-fill-color: transparent;
+        -moz-background-fill-color: transparent;
+        -o-background-fill-color: transparent;
+    color: transparent;
+}
+
+html { background-image: url("../../assets/images/purple-background.png"); background-color: {{ vColorPurple }}; }
+/*** END MEDIA ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+
+/*** END COMPONENTS ***/
+
+/*** INTERACTIVITY ***/
+ { cursor: pointer; }
+/*** END INTERACTIVITY ***/
+
+/*** MEDIA-QUERIES ***/
+@media all and (max-width: 50em) {
+    body, html, main { font-size: 14px; }
+	 { font-size: 1.5em; }
+     { font-size: 2.5em; }
+}
+@media all and (min-width: 50em) {
+    body, html, main { font-size: 18px; }
+     { font-size: 2em; }
+     { font-size: 3em; }
+}
+/*** END MEDIA-QUERIES ***/
+
+/*** CSS TOOLS ***/
+.CSScentered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CSSmaxBodyWidth {
+    max-width: 75em;
+    margin: 0 auto;
+}
+/*** END DECORATION ***/
