@@ -1,0 +1,207 @@
+---
+---
+<!html DOCTYPE>
+<html>
+	<head>
+	
+		<!--
+		<style rel="stylesheet" href="style.css"></style>
+		-->
+		<style>
+		@import url("https://fonts.googleapis.com/css?family=Stalemate");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+body {
+  /*   background:  linear-gradient(
+      rgba(255, 250, 250, 0.75), 
+      rgba(255, 250, 250, 0.75)), url(https://image.freepik.com/free-vector/forest-herbs-blue-background_8365-70.jpg); */
+  /*     background:     linear-gradient(
+      rgba(255, 250, 250, 0.75), 
+      rgba(255, 250, 250, 0.75)
+    ), url(https://i.pinimg.com/736x/3c/c0/54/3cc0541a55ce0550f78246bed0a96380--vintage-floral-backgrounds-vintage-wallpapers.jpg); */
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url(https://s-media-cache-ak0.pinimg.com/originals/30/b3/a9/30b3a9b27032a6b9c1d7a69d2400fb9e.jpg);
+  font-family: "Stalemate", cursive;
+}
+
+.container {
+  overflow: hidden;
+  // margin-top: 3%;
+}
+.book-wrapper {
+  position: relative;
+  margin: 2% auto;
+  width: 670px;
+}
+
+.book-wrapper img {
+  filter: drop-shadow(15px 5px 5px #494338);
+}
+.pages-container {
+  position: absolute;
+  top: 4%;
+  left: 3%;
+  right: 0;
+  bottom: 0;
+  width: 91.5%;
+  height: 91%;
+}
+
+.pages {
+}
+.pages [class^="page-num-"] {
+  background-image: url("https://img00.deviantart.net/cbb9/i/2005/258/c/4/paper_texture_v5_by_bashcorpo.jpg");
+  background-size: auto 100%;
+  position: relative;
+}
+
+.pages-content {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: table;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10%;
+}
+
+.content-inner {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.book-wrapper {
+  user-select: none;
+}
+
+.page-num-1 .pages-background {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url(https://openclipart.org/image/2400px/svg_to_png/242093/Vintage-Floral-Texture-Background.png);
+  background-size: cover;
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+		</style>
+	</head>
+	
+	<body>
+		<div class="container">
+		  <div class="book-wrapper">
+			<div class="book-cover">
+			  <img src="https://github.com/slyka85/assets/blob/master/bookcover2.png?raw=true" alt="">
+			</div>
+			<div class="pages-container">
+			  <div class="pages">
+				<div class="page-num-1">
+				  <div class="pages-content">
+					<div class="pages-background"></div>
+					<div class="content-inner">
+					  <!--<h1>Chapter 1</h1>-->
+					  <div class="text"><p>A Poem in 4 Stanzas</p></div>
+					</div>
+				  </div>
+				</div>{% for file in site.data.poems %}
+				<div class="page-num-{{ forloop.index | plus: 1 }}">
+				  <div class="pages-content">
+					<div class="pages-background"></div>
+					<div class="content-inner">{% if forloop.first %}
+					  <h1>Dear Cadet,</h1>{% endif %}
+					  <div class="text"><p>{{ file }}</p></div>{% if forloop.last %}
+					  <h1>Signed, Madam Ella</h1>{% endif %}
+					</div>
+				  </div>
+				</div>
+				{% endfor %}
+				<div class="page-num-6">
+				  <div class="pages-content">
+					<div class="pages-background"></div>
+					<div class="content-inner">
+					  <!--<h1>Chapter 1</h1>-->
+					  <div class="text"><p>Signed, Madam Ella</p></div>
+					</div>
+				  </div>
+				</div>
+				<!--
+				<div class="page-num-1">
+				  <div class="pages-content">
+					<div class="pages-background"></div>
+					<div class="content-inner">
+					  <h1>Chapter 1</h1>
+					  <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ea non vitae a assumenda sint quod, dolores laboriosam velit corrupti nobis cupiditate perspiciatis natus exercitationem, architecto esse ratione blanditiis! Itaque.</p></div>
+					</div>
+				  </div>
+				</div>
+				<div class="page-num-2">
+				  <div class="pages-content">
+					<div class="content-inner">
+					  <h1>Chapter 2</h1>
+					  <div class="text">
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, cumque autem! Magni eligendi qui officiis? Fugit iste voluptatum atque voluptatibus totam! Nisi accusantium saepe hic. Aut nobis nesciunt mollitia error.</p>
+						  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam odio modi, hic ratione fugit quod natus, excepturi quae minus voluptatum cupiditate quia magnam eveniet ex, reiciendis voluptates ipsam iste laudantium!</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati deserunt magnam, at perspiciatis aut. Voluptatem consequuntur neque quisquam?</p>
+						</div>
+					</div>
+				  </div>
+
+				</div>
+				<div class="page-num-3">
+				  <div class="pages-content">
+					<div class="content-inner">
+					  <h1>Chapter 3</h1>
+					  <div class="text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate voluptas molestiae tempore amet adipisci dicta incidunt nisi alias distinctio fugit blanditiis dignissimos nobis deserunt eum consequuntur ipsam, perspiciatis numquam repellendus.</p>
+						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus in odio deserunt est hic minima inventore, mollitia, officia aspernatur eaque voluptatibus? Amet, molestias adipisci delectus ea eligendi sit numquam illo.</p>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<div class="page-num-4">
+				  <div class="pages-content">
+					<div class="content-inner">
+					  <h1>Stanza</h1>
+					</div>
+				  </div>
+				</div>
+				<div class="page-num-5">
+				  <div class="pages-content">
+					<div class="content-inner">
+					  <h1>The End</h1>
+					</div>
+				  </div>
+				</div>
+				-->
+			  </div>
+			</div>
+		  </div>
+
+		</div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!--
+		<script src="https://cdpn.io/cpe/boomboom/pen.js?key=pen.js-2ce6d51f-149e-2bbe-9264-8d0c164211d8" crossorigin=""></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+		-->
+		<script src="script.js"></script>
+	</body>
+</html>

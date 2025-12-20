@@ -1,4 +1,4 @@
 ---
 layout: letters
-permalink: /letters/
+permalink: /@b19andmother/
 ---
